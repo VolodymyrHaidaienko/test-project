@@ -6,7 +6,7 @@
       :class="disabled ? ' cursor-not-allowed opacity-50' : 'cursor-pointer'"
     >
       <input
-        type="radio"
+        :type="type"
         :class="inputClass"
         :disabled="disabled"
         :name="name"
@@ -15,7 +15,7 @@
         @change="onChange"
       />
 
-     <span
+      <span
         v-if="label"
         :class="`text-black-N600 pb-0.5 text-[16px] leading-6 max-w-[710px] ml-3 ${labelClass}`"
       >
@@ -26,14 +26,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineEmits } from "vue";
+import { defineEmits } from "vue";
 
 const props = withDefaults(
   defineProps<{
     disabled?: boolean;
     name?: string;
+    type?: string;
     inputClass?: string;
-    modelValue?: number | null;
     value: string | number;
     label?: string;
     id?: string;
@@ -42,8 +42,8 @@ const props = withDefaults(
   {
     disabled: false,
     name: "checkbox",
+    type: "checkbox",
     inputClass: "",
-    modelValue: null,
     label: "",
     id: "",
     labelClass: "",

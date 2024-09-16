@@ -15,6 +15,7 @@ import LayoutHead from "@/components/LayoutHead.vue";
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  box-sizing: border-box;
+  width: 768px;
 }
 </style>

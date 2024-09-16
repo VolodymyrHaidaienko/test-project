@@ -45,7 +45,6 @@
             label="споживач"
             label-class="uppercase"
             input-class="w-5 h-5"
-            @update:model-value="($evt) => $emit('update:modelValue', $evt)"
           />
           <Radio
             v-model="clientRole"
@@ -56,7 +55,6 @@
             label-class="uppercase"
             input-class="w-5 h-5"
             label="медичний працівник"
-            @update:model-value="($evt) => $emit('update:modelValue', $evt)"
           />
           <Radio
             v-model="clientRole"
@@ -67,7 +65,6 @@
             label-class="uppercase"
             input-class="w-5 h-5"
             label="журналіст"
-            @update:model-value="($evt) => $emit('update:modelValue', $evt)"
           />
           <h5 class="uppercase my-5 text-start">Повідомлення</h5>
           <TextInput
@@ -177,10 +174,6 @@ import Radio from "@/components/global/Radio.vue";
 import Button from "@/components/global/Button.vue";
 
 const { handleSubmit, meta, values } = useForm();
-
-defineEmits<{
-  (event: "update:modelValue", value: number): void;
-}>();
 
 const clientRole = ref<string>("");
 

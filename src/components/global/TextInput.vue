@@ -37,23 +37,6 @@
           $emit('update:modelValue', ($event.target as HTMLInputElement).value)
         "
       />
-      <cleave
-        v-if="isMask"
-        :id="name"
-        :class="`${classInput} cleave input-control block w-full focus:outline-none h-[27pt] `"
-        :name="name"
-        :placeholder="placeholder"
-        :value="modelValue"
-        :error="error"
-        :readonly="isReadonly"
-        :disabled="disabled"
-        :validate="validate"
-        :options="options"
-        model-value="modelValue"
-        @input="
-          $emit('update:modelValue', ($event.target as HTMLInputElement).value)
-        "
-      />
       <div v-if="labelRadio" class="uppercase">{{ labelRadio }}</div>
       <slot name="actionButtons"></slot>
 
@@ -107,7 +90,7 @@
 </template>
 <script setup lang="ts">
 import { ref, defineEmits } from "vue";
-import Cleave from "vue-cleave-component";
+
 import Icon from "./Icon.vue";
 
 type Options = {
